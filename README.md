@@ -5,3 +5,10 @@
 3. display checklist using JS
 4. add buttons to do it
 5. make it look SICK
+
+
+needs:
+- [ ] button designs
+- [ ] checklist to display
+- [ ] nps to display
+- [ ] Chrome extension favicons (16px, 32px, 48px, 128px)
