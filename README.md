@@ -1,4 +1,5 @@
 # democues
+![democues](democues.jpg?raw=true "Democues")
 
 1. create empty chrome extension
 2. display NPS survey using JS
