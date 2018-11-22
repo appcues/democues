@@ -12,3 +12,20 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
 });
+
+chrome.webRequest.onBeforeRequest.addListener(
+  function(details) {
+    if (details.url.indexOf("http://democues.reload") >= 0) {
+      chrome.runtime.reload();
+        return {
+            redirectUrl: 'javascript:void(0)'
+      };
+    }
+    return {cancel: false};
+  },
+  {
+    urls: ["http://democues.reload/"],
+    types: ["main_frame"]
+  },
+  ["blocking"]
+);

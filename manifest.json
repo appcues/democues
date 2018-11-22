@@ -1,12 +1,12 @@
 {
   "name": "Democues",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Demo all the parts of Appcues, anywhere.",
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "webRequestBlocking",  "webRequest", "http://democues.reload/"],
   "page_action": {
     "default_popup": "popup.html"
   },
