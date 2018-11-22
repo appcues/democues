@@ -15,9 +15,9 @@
     {
       "matches": ["<all_urls>"],
       "run_at": "document_idle",
-      "all_frames": true,
+      "all_frames": false,
       "css": [],
-        "js": ["build/javascriptSDK.js", "contentscript.js"]
+      "js": ["build/javascriptSDK.js", "contentscript.js"]
     }
   ],
   "manifest_version": 2
