@@ -1,6 +1,6 @@
 {
   "name": "Democues",
-  "version": "0.1.1",
+  "version": "0.1.44",
   "description": "Demo all the parts of Appcues, anywhere.",
   "background": {
     "scripts": ["background.js"],
@@ -17,7 +17,7 @@
       "run_at": "document_idle",
       "all_frames": true,
       "css": [],
-      "js": ["contentscript.js"]
+        "js": ["build/javascriptSDK.js", "contentscript.js"]
     }
   ],
   "manifest_version": 2
