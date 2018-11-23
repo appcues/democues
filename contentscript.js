@@ -1,9 +1,13 @@
-console.log("Appending Appcues Javascript...");
+console.log("Democues begin...");
 
-// Add the script and anonymous identify
-const s = document.createElement("script");
-s.src = "//fast.appcues.com/31123.js";
-(document.head || document.documentElement).appendChild(s);
-s.onload = function() {
-  console.log('Appcues script appended.');
-};
+chrome.storage.sync.get(['appcutie'], function(result) {
+    if(result.appcutie === undefined) {
+        console.log('no appcutie found going anonymous');
+        Appcues.anonymous();
+    } else {
+        console.log('Value currently is ' + JSON.stringify(result.appcutie));
+        console.log('is appcues loaded?', Appcues);
+        Appcues.identify(result.appcutie.userId);
+    }
+});
+console.log("Democues end.");

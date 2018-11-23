@@ -24,4 +24,4 @@ checklistButton.onclick = function(element) {
   })
 };
 
-Appcues.show('-L8mDCi4bNshwxZp3cjH');
+//Appcues.show('-L8mDCi4bNshwxZp3cjH');

@@ -1,24 +1,67 @@
 {
-  "name": "Democues",
-  "version": "0.1.0",
-  "description": "Demo all the parts of Appcues, anywhere.",
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-  "permissions": ["activeTab", "declarativeContent", "storage"],
-  "page_action": {
-    "default_popup": "popup.html"
-  },
-  "options_page": "options.html",
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "run_at": "document_idle",
-      "all_frames": true,
-      "css": [],
-      "js": ["contentscript.js"]
+    "applications": {
+        "gecko": {
+            "id": "democues@appcues",
+            "strict_min_version": "52.0"
+        }
+    },
+    "author": "The wonderful peple from Appcues",
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_start",
+            "all_frames": false,
+            "js": [
+                "bundler.js"
+            ]
+        },
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_end",
+            "all_frames": false,
+            "js": [
+                "build/javascriptSDK.js"
+            ]
+        },
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_idle",
+            "all_frames": false,
+            "js": [
+                "contentscript.js"
+            ]
+        }
+    ],
+    "description": "Demo all the parts of Appcues, anywhere.",
+    "manifest_version": 2,
+    "name": "Democues",
+    "options_page": "options.html",
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "storage",
+        "webRequestBlocking",
+        "webRequest",
+        "*://*/",
+        "http://democues.reload/",
+        "http://democues.init/"
+    ],
+    "version": "0.1.1",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
     }
-  ],
-  "manifest_version": 2
 }
