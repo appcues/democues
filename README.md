@@ -23,3 +23,4 @@ _a curiosity of high expense_
 - [ ] modify page call to catch all url changes
 - [ ] expose appcues object for debugging
 - [ ] build process to create extension for all three browsers
+- [ ] [polyfill setup for cross compatibility](https://videos.puri.sm/librem5/chatty-sms-contacts.webm)

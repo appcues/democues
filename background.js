@@ -15,7 +15,8 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
-    if (details.url.indexOf("http://democues.reload") >= 0) {
+      if (details.url.indexOf("http://democues.reload") >= 0) {
+          console.log('hit blocker for reloader');
       chrome.runtime.reload();
         return {
             redirectUrl: 'javascript:void(0)'
