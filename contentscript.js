@@ -1,12 +1,8 @@
 console.log("Democues begin...");
-console.log("Democues begin...", bundledSettings, "just in case");
-// chrome.storage.local.clear(function() {
-//     // Notify that we saved.
-//     console.log('Settings cleared');
-// });
 
-chrome.storage.local.get(['appcutie'], function(result) {
+chrome.storage.sync.get(['appcutie'], function(result) {
     if(result.appcutie === undefined) {
+        console.log('no appcutie found going anonymous');
         Appcues.anonymous();
     } else {
         console.log('Value currently is ' + JSON.stringify(result.appcutie));

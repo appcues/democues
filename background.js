@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.local.set({color: '#3aa757'}, function() {
+  chrome.storage.sync.set({color: '#3aa757'}, function() {
     console.log("The color is green.");
   });
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
@@ -23,21 +23,21 @@ chrome.webRequest.onBeforeRequest.addListener(
               redirectUrl: 'https://my.appcues.com/'
           };
         } else if (parser.hostname.indexOf("democues.init") >= 0) {
-          const urlParams = new URLSearchParams(parser.search);
-          const userId = urlParams.get('userId');
+            const urlParams = new URLSearchParams(parser.search);
+            const userId = urlParams.get('userId');
             const accountId = urlParams.get('accountId');
-            chrome.storage.local.get(['appcutie'], function(result) {
+            chrome.storage.sync.get(['appcutie'], function(result) {
                 if(result.appcutie === undefined) {
                     const newResult = {appcutie: { accountId: accountId, userId: userId}};
-                    chrome.storage.local.set(newResult, function() {
+                    chrome.storage.sync.set(newResult, function() {
                         console.log('Settings saved', newResult);
                     });
                 } else {
                     const newResult = {appcutie: { accountId: (accountId) ? accountId : result.appcutie.accountId,
                                                    userId: (userId) ? userId: result.appcutie.userId}};
                     if(newResult.appcutie.userId && newResult.appcutie.accountId) {
-                        chrome.storage.local.set(newResult, function() {
-                            console.log('Settings saved', newResult);
+                        chrome.storage.sync.set(newResult, function() {
+                            console.log('Settings saved');
                         });
                     }
                 }
