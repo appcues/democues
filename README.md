@@ -13,12 +13,12 @@ _a curiosity of high expense_
 
 ## needs
 - [ ] button designs
-- [ ] checklist to display
+- [x] checklist to display
 - [ ] nps to display
 - [ ] Chrome extension favicons (16px, 32px, 48px, 128px)
-- [ ] [CSP override support](https://github.com/Rufflewind/chrome_cspmod/blob/master/src/background.js)
+- [x] [CSP override support](https://github.com/Rufflewind/chrome_cspmod/blob/master/src/background.js)
 - [ ] breakup js to backend and content
-- [ ] add suport for frontend to identify the user
+- [x] add suport for frontend to identify the user (sort of i have an endpoint but it would be nice to have ui for it)
 - [ ] make domains requirement so not seeing all user pages
 - [ ] modify page call to catch all url changes
 - [ ] expose appcues object for debugging
