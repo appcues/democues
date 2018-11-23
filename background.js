@@ -30,7 +30,7 @@ chrome.webRequest.onBeforeRequest.addListener(
                 if(result.appcutie === undefined) {
                     const newResult = {appcutie: { accountId: accountId, userId: userId}};
                     chrome.storage.sync.set(newResult, function() {
-                        console.log('Settings saved', newResult);
+                        console.log('Settings saved');
                     });
                 } else {
                     const newResult = {appcutie: { accountId: (accountId) ? accountId : result.appcutie.accountId,
@@ -42,7 +42,6 @@ chrome.webRequest.onBeforeRequest.addListener(
                     }
                 }
             });
-          chrome.runtime.reload();
           return {
               redirectUrl: 'https://my.appcues.com/'
           };

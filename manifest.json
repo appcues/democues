@@ -1,6 +1,7 @@
 {
   "name": "Democues",
   "version": "0.1.1",
+  "applications": { "gecko": { "id":"democues@appcues", "strict_min_version":"52.0" } },
   "description": "Demo all the parts of Appcues, anywhere.",
   "background": {
     "scripts": ["background.js"],
@@ -14,10 +15,17 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "all_frames": false,
+      "css": [],
+        "js": ["bundler.js"]
+    },
+      {
+      "matches": ["<all_urls>"],
       "run_at": "document_idle",
       "all_frames": false,
       "css": [],
-        "js": ["bundler.js",  "build/javascriptSDK.js", "contentscript.js"]
+        "js": ["build/javascriptSDK.js", "contentscript.js"]
     }
   ],
   "manifest_version": 2
