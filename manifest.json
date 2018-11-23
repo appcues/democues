@@ -1,12 +1,12 @@
 {
   "name": "Democues",
-  "version": "0.1.44",
+  "version": "0.1.1",
   "description": "Demo all the parts of Appcues, anywhere.",
   "background": {
     "scripts": ["background.js"],
     "persistent": true
   },
-    "permissions": ["activeTab", "declarativeContent", "storage", "webRequestBlocking",  "webRequest", "http://democues.reload/"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "webRequestBlocking",  "webRequest", "http://democues.reload/", "http://democues.init/"],
   "page_action": {
     "default_popup": "popup.html"
   },
@@ -17,7 +17,7 @@
       "run_at": "document_idle",
       "all_frames": false,
       "css": [],
-      "js": ["build/javascriptSDK.js", "contentscript.js"]
+        "js": ["bundler.js",  "build/javascriptSDK.js", "contentscript.js"]
     }
   ],
   "manifest_version": 2
