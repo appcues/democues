@@ -19,9 +19,9 @@ checklistButton.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
       tabs[0].id,
-      {code: "console.log('Appcues.show()'); "}
+      {code: "console.log('Appcues.show()');"}
     );
   })
 };
 
-Appcues.show('-L8mDCi4bNshwxZp3cjH');
+// Appcues.show('-L8mDCi4bNshwxZp3cjH');
